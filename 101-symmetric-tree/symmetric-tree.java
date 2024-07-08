@@ -35,6 +35,11 @@ class Solution {
             return false;
         }
 
+        if(leftside == null || rightside == null)
+        {
+            return leftside==rightside;
+        }
+        
         return (leftside.val==rightside.val) && verify(leftside.left, rightside.right) && verify(leftside.right, rightside.left);
     }
 }
