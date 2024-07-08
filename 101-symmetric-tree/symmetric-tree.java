@@ -26,9 +26,13 @@ class Solution {
 
     boolean verify(TreeNode leftside, TreeNode rightside)
     {
+        if(leftside == null && rightside == null)
+        {
+            return true;
+        }
         if(leftside == null || rightside == null)
         {
-            return leftside==rightside;
+            return false;
         }
 
         return (leftside.val==rightside.val) && verify(leftside.left, rightside.right) && verify(leftside.right, rightside.left);
